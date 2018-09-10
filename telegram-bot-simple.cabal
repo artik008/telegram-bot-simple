@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4280984aa13d278dcdd078adc9dbae36453194881344c26a0dc1fb8e4f46ee35
+-- hash: 8696209aa3797a7e61a58140f31cbede9ccf8502da1dafe25801b28bbe29bb26
 
 name:           telegram-bot-simple
 version:        0.2.0
@@ -33,6 +33,7 @@ library
       Telegram.Bot.API.GettingUpdates
       Telegram.Bot.API.InlineMode
       Telegram.Bot.API.Internal.Utils
+      Telegram.Bot.API.JsonExt
       Telegram.Bot.API.MakingRequests
       Telegram.Bot.API.Methods
       Telegram.Bot.API.MultipartFormData
@@ -60,8 +61,8 @@ library
     , aeson-pretty
     , base >=4.9 && <5
     , bytestring
-    , containers
     , connection
+    , containers
     , cron
     , hashable
     , http-api-data
@@ -97,13 +98,19 @@ executable example-echo-bot
     , aeson-pretty
     , base >=4.9 && <5
     , bytestring
+    , connection
+    , containers
     , cron
     , hashable
     , http-api-data
     , http-client
     , http-client-tls
+    , http-media
+    , http-types
+    , mime-types
     , monad-control
     , mtl
+    , network
     , pretty-show
     , profunctors
     , servant
@@ -129,13 +136,19 @@ executable example-todo-bot
     , aeson-pretty
     , base >=4.9 && <5
     , bytestring
+    , connection
+    , containers
     , cron
     , hashable
     , http-api-data
     , http-client
     , http-client-tls
+    , http-media
+    , http-types
+    , mime-types
     , monad-control
     , mtl
+    , network
     , pretty-show
     , profunctors
     , servant
